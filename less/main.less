@@ -1,13 +1,47 @@
 body{
 	background: #d6d6d6;
-	font-size: 30px;
-	color: #fff;
 }
-.asd{
-	color: #0f0;
+.hide{
+	visibility: hidden;
+	opacity: 0;
+	transition-duration: .2s;
 }
-table{
-	td{
-		width: 300px
+.show{
+	visibility: visible;
+	opacity: 1;
+	transition-duration: .2s;
+	transition-delay: .2s;
+}
+.tab{
+	display: inline-block;
+	padding: 1em 2em;
+	background: #0f0;
+	cursor: pointer;
+	&:hover{
+		color: #f00;
+	}
+	& + &{
+		margin-left: 1rem;
+	}
+	&_active{
+		box-shadow: inset 0 0 0 1px red;
+		color: red;
+	}
+	&-content{
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		box-sizing: border-box;
+		background: #777;
+		padding: 1em 2em;
+		border: 2px solid #f00;
+		&-wrapper{
+			position: relative;
+			width: 20em;
+			height: 15em;
+			margin-top: 1rem;
+		}
 	}
 }
